@@ -1,3 +1,7 @@
+/**
+ @author nick.drakopoulos
+ */
+
 package com.market.shopapp;
 
 import org.springframework.boot.SpringApplication;

@@ -2,42 +2,30 @@
  * @author nick.drakopoulos
  */
 
-package com.market.shopapp.domain;
+package com.market.shopapp.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
-@Entity
-@Table(name = "product")
-public class Product extends AbstractEntity<Integer>{
+public class ProductDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Integer id;
 
-    @Column(name = "name")
+    @NotEmpty
     private String name;
 
-    @Column(name = "price")
+    @NotNull
     private Integer price; // in cents
 
-    @Column(name = "quantity")
-    private Integer quantity;
+    private Integer quantity = 1;
 
-    public Product() {
+    public ProductDto() {
     }
 
-    @Override
     public Integer getId() {
         return id;
     }
 
-    @Override
     public void setId(Integer id) {
         this.id = id;
     }
@@ -64,5 +52,15 @@ public class Product extends AbstractEntity<Integer>{
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", price=" + price +
+            ", quantity=" + quantity +
+            '}';
     }
 }

@@ -1,3 +1,7 @@
+/**
+ @author nick.drakopoulos
+ */
+
 package com.market.shopapp.domain;
 
 import javax.persistence.Column;
@@ -20,5 +24,13 @@ public abstract class AbstractEntity<T> {
         if (createdAt == null) {
             createdAt = Instant.now();
         }
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    protected void setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
     }
 }
