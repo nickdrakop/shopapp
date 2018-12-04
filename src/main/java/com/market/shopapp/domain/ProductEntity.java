@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "product")
-public class ProductEntity extends AbstractEntity<Integer>{
+public class ProductEntity extends AbstractEntity<Integer> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

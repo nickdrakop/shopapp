@@ -1,0 +1,14 @@
+apply plugin: "checkstyle"
+
+checkstyle {
+    toolVersion = '8.8'
+    ignoreFailures = false
+
+    reportsDir = file("$project.buildDir/checkstyleReports")
+    configDir = rootProject.file("rules")
+    maxErrors = 0
+
+    checkstyleMain {
+        source = sourceSets.main.allSource
+    }
+}

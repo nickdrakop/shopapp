@@ -1,3 +1,7 @@
+/**
+ * @author nick.drakopoulos
+ */
+
 package com.market.shopapp;
 
 import org.junit.Test;
@@ -9,8 +13,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class ShopappApplicationTests {
 
-	@Test
-	public void contextLoads() {
-	}
+    @Test
+    public void contextLoads() {
+    }
 
 }

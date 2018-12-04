@@ -1,5 +1,5 @@
 /**
- @author nick.drakopoulos
+ * @author nick.drakopoulos
  */
 
 package com.market.shopapp;
@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ShopappApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ShopappApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ShopappApplication.class, args);
+    }
 }

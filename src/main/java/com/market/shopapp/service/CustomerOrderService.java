@@ -63,7 +63,7 @@ public class CustomerOrderService {
     private Set<ProductEntity> checkProductsExistenceAndExtract(List<Integer> productIds) {
         Set<ProductEntity> productEntities = new HashSet<>(productDao.findAllById(productIds));
 
-        if(productEntities.isEmpty() || productEntities.size() != productIds.size()) {
+        if (productEntities.size() != productIds.size()) {
             throw new ApplicationException(AppError.ERROR_FINDING_PRODUCTS);
         }
         return productEntities;

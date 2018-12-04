@@ -38,7 +38,7 @@ public class ProductMapper {
     }
 
     public Set<ProductEntity> mapToProductEntities(List<ProductDto> productDtoList) {
-        if(productDtoList == null) {
+        if (productDtoList == null) {
             return null;
         }
 
@@ -48,7 +48,7 @@ public class ProductMapper {
     }
 
     public List<ProductDto> mapToProductDtos(Set<ProductEntity> productEntityList) {
-        if(productEntityList == null) {
+        if (productEntityList == null) {
             return null;
         }
 

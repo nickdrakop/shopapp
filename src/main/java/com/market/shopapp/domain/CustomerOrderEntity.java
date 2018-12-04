@@ -19,7 +19,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "customer_order")
-public class CustomerOrderEntity extends AbstractEntity<Integer>{
+public class CustomerOrderEntity extends AbstractEntity<Integer> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
