@@ -20,7 +20,7 @@ import java.time.Instant;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/order")
+@RequestMapping(path = "/api/orders")
 public class CustomerOrderApi {
     private static final Logger LOG = LoggerFactory.getLogger(CustomerOrderApi.class);
 
@@ -39,8 +39,8 @@ public class CustomerOrderApi {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<CustomerOrderDto> getAll(@RequestParam("start-date") Instant startDate,
-                                         @RequestParam("end-date") Instant endDate) {
+    public List<CustomerOrderDto> getAll(@RequestParam(value = "start-date", required = false) Instant startDate,
+                                         @RequestParam(value = "end-date", required = false) Instant endDate) {
 
         LOG.info("A new request was received in getAll");
         return customerOrderService.fetchAll(startDate, endDate);

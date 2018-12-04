@@ -26,6 +26,10 @@ public class ProductDao {
         return repository.findAll();
     }
 
+    public List<ProductEntity> findAllById(List<Integer> ids) {
+        return repository.findAllById(ids);
+    }
+
     public Integer createOrUpdate(ProductEntity entity) {
         return Optional.ofNullable(repository.save(entity))
             .map(ProductEntity::getId)

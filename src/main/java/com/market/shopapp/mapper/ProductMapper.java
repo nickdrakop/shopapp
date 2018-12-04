@@ -8,6 +8,10 @@ import com.market.shopapp.domain.ProductEntity;
 import com.market.shopapp.dto.ProductDto;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 @Component
 public class ProductMapper {
 
@@ -31,5 +35,25 @@ public class ProductMapper {
         dto.setPrice(entity.getPrice());
 
         return dto;
+    }
+
+    public Set<ProductEntity> mapToProductEntities(List<ProductDto> productDtoList) {
+        if(productDtoList == null) {
+            return null;
+        }
+
+        return productDtoList.stream()
+                .map(this::mapToProductEntity)
+                .collect(Collectors.toSet());
+    }
+
+    public List<ProductDto> mapToProductDtos(Set<ProductEntity> productEntityList) {
+        if(productEntityList == null) {
+            return null;
+        }
+
+        return productEntityList.stream()
+                .map(this::mapToProductDto)
+                .collect(Collectors.toList());
     }
 }

@@ -5,20 +5,15 @@
 package com.market.shopapp.mapper;
 
 import com.market.shopapp.domain.CustomerOrderEntity;
+import com.market.shopapp.domain.ProductEntity;
 import com.market.shopapp.dto.CustomerOrderDto;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class CustomerOrderMapper {
-
-    public CustomerOrderEntity mapToCustomerOrderEntity(CustomerOrderDto customerOrderDto) {
-        CustomerOrderEntity customerOrderEntity = new CustomerOrderEntity();
-
-        customerOrderEntity.setEmail(customerOrderDto.getEmail());
-        customerOrderEntity.setProducts(customerOrderDto.getProducts());
-
-        return customerOrderEntity;
-    }
 
     public CustomerOrderDto mapToCustomerOrderDto(CustomerOrderEntity entity) {
         CustomerOrderDto dto = new CustomerOrderDto();
@@ -27,8 +22,13 @@ public class CustomerOrderMapper {
         dto.setEmail(entity.getEmail());
         dto.setOrderCreatedAt(entity.getCreatedAt());
         dto.setTotalOrderValue(entity.getTotalOrderValue());
-        dto.setProducts(entity.getProducts());
+
+        List<Integer> productIds = entity.getProducts().stream()
+                .map(ProductEntity::getId)
+                .collect(Collectors.toList());
+        dto.setProductIds(productIds);
 
         return dto;
     }
+
 }

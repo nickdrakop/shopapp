@@ -4,12 +4,9 @@
 
 package com.market.shopapp.dto;
 
-import com.market.shopapp.domain.ProductEntity;
-
 import javax.validation.constraints.NotEmpty;
 import java.time.Instant;
-import java.util.Optional;
-import java.util.Set;
+import java.util.List;
 
 public class CustomerOrderDto {
 
@@ -23,7 +20,7 @@ public class CustomerOrderDto {
     private Instant orderCreatedAt;
 
     @NotEmpty
-    private Set<ProductEntity> products;
+    private List<Integer> productIds;
 
     public CustomerOrderDto() {
     }
@@ -45,13 +42,7 @@ public class CustomerOrderDto {
     }
 
     public Integer getTotalOrderValue() {
-        if(Optional.ofNullable(products).isPresent()){
-            return products.stream()
-                .map(ProductEntity::getPrice)
-                .mapToInt(Integer::intValue)
-                .sum();
-        }
-        return 0;
+        return totalOrderValue;
     }
 
     public void setTotalOrderValue(Integer totalOrderValue) {
@@ -66,22 +57,19 @@ public class CustomerOrderDto {
         this.orderCreatedAt = orderCreatedAt;
     }
 
-    public Set<ProductEntity> getProducts() {
-        return products;
+    public List<Integer> getProductIds() {
+        return productIds;
     }
 
-    public void setProducts(Set<ProductEntity> products) {
-        this.products = products;
+    public void setProductIds(List<Integer> productIds) {
+        this.productIds = productIds;
     }
 
     @Override
     public String toString() {
         return "CustomerOrderDto{" +
-            "id=" + id +
-            ", email='" + email + '\'' +
-            ", totalOrderValue=" + totalOrderValue +
-            ", orderCreatedAt=" + orderCreatedAt +
-            ", products=" + products +
-            '}';
+                ", email='" + email + '\'' +
+                ", productIds=" + productIds +
+                '}';
     }
 }

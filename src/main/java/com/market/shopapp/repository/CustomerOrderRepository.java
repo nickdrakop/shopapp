@@ -15,7 +15,9 @@ import java.util.List;
 @Repository
 public interface CustomerOrderRepository extends JpaRepository<CustomerOrderEntity, Integer> {
 
-    @Query(value = "SELECT * FROM customer_order WHERE created_at >= :startDate and created_at < :endDate",
+    @Query(value = "SELECT * FROM customer_order " +
+            "WHERE (null == :startDate OR created_at >= :startDate) " +
+            "and (null == :endDate OR created_at < :endDate)",
         nativeQuery = true)
     List<CustomerOrderEntity> findAll(Instant startDate, Instant endDate);
 }
