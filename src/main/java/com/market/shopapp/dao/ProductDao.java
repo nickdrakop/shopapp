@@ -30,7 +30,7 @@ public class ProductDao {
         return repository.findAllById(ids);
     }
 
-    public Integer createOrUpdate(ProductEntity entity) {
+    public Integer save(ProductEntity entity) {
         return Optional.ofNullable(repository.save(entity))
             .map(ProductEntity::getId)
             .orElse(null);

@@ -41,7 +41,7 @@ public class CustomerOrderService {
     }
 
     @Transactional
-    public Integer create(CustomerOrderDto customerOrderDto) {
+    public Integer save(CustomerOrderDto customerOrderDto) {
         Set<ProductEntity> productEntities = checkProductsExistenceAndExtract(customerOrderDto.getProductIds());
 
         CustomerOrderEntity customerOrderEntity = new CustomerOrderEntity();
@@ -49,7 +49,7 @@ public class CustomerOrderService {
         customerOrderEntity.setProducts(productEntities);
         customerOrderEntity.setTotalOrderValue(calculateTotalPrice(productEntities));
 
-        return customerOrderDao.create(customerOrderEntity);
+        return customerOrderDao.save(customerOrderEntity);
     }
 
     public List<CustomerOrderDto> fetchAll(Instant startDate, Instant endDate) {

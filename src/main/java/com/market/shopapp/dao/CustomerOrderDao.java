@@ -27,7 +27,7 @@ public class CustomerOrderDao {
         return repository.findAll(startDate, endDate);
     }
 
-    public Integer create(CustomerOrderEntity entity) {
+    public Integer save(CustomerOrderEntity entity) {
         return Optional.ofNullable(repository.save(entity))
             .map(CustomerOrderEntity::getId)
             .orElse(null);

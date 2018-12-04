@@ -32,15 +32,15 @@ public class ProductApi {
     @RequestMapping(method = RequestMethod.POST)
     public Integer create(@RequestBody @Valid ProductDto productDto) {
 
-        LOG.info("A new request was received in create with request: {}", productDto);
-        return productService.createOrUpdate(productDto);
+        LOG.info("A new request was received in save with request: {}", productDto);
+        return productService.save(productDto);
     }
 
     @RequestMapping(method = RequestMethod.PUT)
     public Integer update(@RequestBody @Valid ProductDto productDto) {
 
         LOG.info("A new request was received in update with request: {}", productDto);
-        return productService.createOrUpdate(productDto);
+        return productService.save(productDto);
     }
 
     @RequestMapping(method = RequestMethod.GET)

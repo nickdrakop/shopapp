@@ -27,10 +27,10 @@ public class ProductService {
         this.productMapper = productMapper;
     }
 
-    public Integer createOrUpdate(ProductDto productDto) {
+    public Integer save(ProductDto productDto) {
 
         ProductEntity productEntity = productMapper.mapToProductEntity(productDto);
-        return productDao.createOrUpdate(productEntity);
+        return productDao.save(productEntity);
     }
 
     public List<ProductDto> fetchAll() {

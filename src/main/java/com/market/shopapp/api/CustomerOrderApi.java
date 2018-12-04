@@ -34,8 +34,8 @@ public class CustomerOrderApi {
     @RequestMapping(method = RequestMethod.POST)
     public Integer create(@RequestBody @Valid CustomerOrderDto customerOrderDto) {
 
-        LOG.info("A new request was received in create with request: {}", customerOrderDto);
-        return customerOrderService.create(customerOrderDto);
+        LOG.info("A new request was received in save with request: {}", customerOrderDto);
+        return customerOrderService.save(customerOrderDto);
     }
 
     @RequestMapping(method = RequestMethod.GET)
