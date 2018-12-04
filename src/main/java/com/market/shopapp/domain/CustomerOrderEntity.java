@@ -19,7 +19,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "customer_order")
-public class CustomerOrder extends AbstractEntity<Integer>{
+public class CustomerOrderEntity extends AbstractEntity<Integer>{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,9 +37,9 @@ public class CustomerOrder extends AbstractEntity<Integer>{
         joinColumns = { @JoinColumn(name = "customer_order_id") },
         inverseJoinColumns = { @JoinColumn(name = "product_id") }
     )
-    private Set<Product> products = new HashSet<>();
+    private Set<ProductEntity> products = new HashSet<>();
 
-    public CustomerOrder() {
+    public CustomerOrderEntity() {
     }
 
     @Override
@@ -68,11 +68,11 @@ public class CustomerOrder extends AbstractEntity<Integer>{
         this.totalOrderValue = totalOrderValue;
     }
 
-    public Set<Product> getProducts() {
+    public Set<ProductEntity> getProducts() {
         return products;
     }
 
-    public void setProducts(Set<Product> products) {
+    public void setProducts(Set<ProductEntity> products) {
         this.products = products;
     }
 }
