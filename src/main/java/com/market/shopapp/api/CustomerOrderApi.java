@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 import java.time.Instant;
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "/api/order")
@@ -31,18 +32,18 @@ public class CustomerOrderApi {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public void create(@RequestBody @Valid CustomerOrderDto customerOrderDto) {
+    public Integer create(@RequestBody @Valid CustomerOrderDto customerOrderDto) {
 
         LOG.info("A new request was received in create with request: {}", customerOrderDto);
-        customerOrderService.create(customerOrderDto);
+        return customerOrderService.create(customerOrderDto);
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public void getAll(@RequestParam("start-date") Instant startDate,
-                       @RequestParam("end-date") Instant endDate) {
+    public List<CustomerOrderDto> getAll(@RequestParam("start-date") Instant startDate,
+                                         @RequestParam("end-date") Instant endDate) {
 
         LOG.info("A new request was received in getAll");
-        customerOrderService.fetchAll(startDate, endDate);
+        return customerOrderService.fetchAll(startDate, endDate);
     }
 
 }

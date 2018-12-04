@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS product
     price INTEGER NOT NULL, -- in cents
     quantity INTEGER NOT NULL,
     created_at TIMESTAMP NOT NULL,
-    CONSTRAINT id_pkey PRIMARY KEY (id)
+    CONSTRAINT id_product_pkey PRIMARY KEY (id)
 );
 
 CREATE SEQUENCE customer_order_id_seq;
@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS customer_order
     email VARCHAR(255) NOT NULL,
     total_order_value INTEGER NOT NULL, -- in cents
     created_at TIMESTAMP NOT NULL,
-    CONSTRAINT id_pkey PRIMARY KEY (id)
+    CONSTRAINT id_customer_order_pkey PRIMARY KEY (id)
 );
 
 CREATE TABLE IF NOT EXISTS customer_order_product
@@ -25,5 +25,5 @@ CREATE TABLE IF NOT EXISTS customer_order_product
     customer_order_id INTEGER NOT NULL,
     CONSTRAINT customer_order_product_fk_1 FOREIGN KEY (product_id) REFERENCES product (id),
     CONSTRAINT customer_order_product_fk_2 FOREIGN KEY (customer_order_id) REFERENCES customer_order (id),
-    CONSTRAINT id_pkey PRIMARY KEY (product_id,customer_order_id)
+    CONSTRAINT id_customer_order_product_pkey PRIMARY KEY (product_id,customer_order_id)
 );

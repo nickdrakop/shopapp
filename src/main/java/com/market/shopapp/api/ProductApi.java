@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "/api/product")
@@ -29,24 +30,24 @@ public class ProductApi {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public void create(@RequestBody @Valid ProductDto productDto) {
+    public Integer create(@RequestBody @Valid ProductDto productDto) {
 
         LOG.info("A new request was received in create with request: {}", productDto);
-        productService.createOrUpdate(productDto);
+        return productService.createOrUpdate(productDto);
     }
 
     @RequestMapping(method = RequestMethod.PUT)
-    public void update(@RequestBody @Valid ProductDto productDto) {
+    public Integer update(@RequestBody @Valid ProductDto productDto) {
 
         LOG.info("A new request was received in update with request: {}", productDto);
-        productService.createOrUpdate(productDto);
+        return productService.createOrUpdate(productDto);
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public void getAll() {
+    public List<ProductDto> getAll() {
 
         LOG.info("A new request was received in getAll");
-        productService.fetchAll();
+        return productService.fetchAll();
     }
 
 }
