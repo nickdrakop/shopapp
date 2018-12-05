@@ -8,7 +8,6 @@ import com.market.shopapp.dao.ProductDao
 import com.market.shopapp.domain.CustomerOrderEntity
 import com.market.shopapp.domain.ProductEntity
 import com.market.shopapp.dto.CustomerOrderDto
-import com.market.shopapp.dto.ProductDto
 import com.market.shopapp.helper.ProductHelper
 import com.market.shopapp.mapper.CustomerOrderMapper
 import spock.lang.Specification

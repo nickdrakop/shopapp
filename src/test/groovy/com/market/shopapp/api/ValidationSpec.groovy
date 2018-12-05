@@ -40,7 +40,7 @@ class ValidationSpec extends Specification {
             ProductDto productDto = new ProductDto(name: "someName", price: 1)
 
         when:
-            Set<ConstraintViolation<ProductDto>> violations = validator.validate(productDto);
+            Set<ConstraintViolation<ProductDto>> violations = validator.validate(productDto)
 
         then:
             violations.size() == 0
@@ -52,7 +52,7 @@ class ValidationSpec extends Specification {
             ProductDto productDto = new ProductDto(name: givenName, price: givenPrice)
 
         when:
-            Set<ConstraintViolation<ProductDto>> violations = validator.validate(productDto);
+            Set<ConstraintViolation<ProductDto>> violations = validator.validate(productDto)
 
         then:
             violations.size() == 1
@@ -71,7 +71,7 @@ class ValidationSpec extends Specification {
             CustomerOrderDto customerOrderDto = new CustomerOrderDto(email: "a@gmail.com", productIds: [1, 2])
 
         when:
-            Set<ConstraintViolation<CustomerOrderDto>> violations = validator.validate(customerOrderDto);
+            Set<ConstraintViolation<CustomerOrderDto>> violations = validator.validate(customerOrderDto)
 
         then:
             violations.size() == 0
@@ -83,7 +83,7 @@ class ValidationSpec extends Specification {
             CustomerOrderDto customerOrderDto = new CustomerOrderDto(email: givenEmail, productIds: givenIds)
 
         when:
-            Set<ConstraintViolation<CustomerOrderDto>> violations = validator.validate(customerOrderDto);
+            Set<ConstraintViolation<CustomerOrderDto>> violations = validator.validate(customerOrderDto)
 
         then:
             violations.size() == 1

@@ -15,9 +15,10 @@ apply plugin: 'groovy'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply from: file("gradle/build-addons/checkstyle.gradle")
+apply from: file("gradle/build-addons/codenarc.gradle")
 
 group = 'com.market'
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0'
 sourceCompatibility = 1.8
 
 repositories {

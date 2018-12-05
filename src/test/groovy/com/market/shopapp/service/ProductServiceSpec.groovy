@@ -7,7 +7,6 @@ import com.market.shopapp.dao.ProductDao
 import com.market.shopapp.domain.ProductEntity
 import com.market.shopapp.dto.ProductDto
 import com.market.shopapp.mapper.ProductMapper
-import com.market.shopapp.repository.ProductRepository
 import spock.lang.Specification
 
 class ProductServiceSpec extends Specification {

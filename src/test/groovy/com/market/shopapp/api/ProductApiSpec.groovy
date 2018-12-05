@@ -6,7 +6,6 @@ package com.market.shopapp.api
 import com.market.shopapp.dto.ProductDto
 import com.market.shopapp.service.ProductService
 import spock.lang.Specification
-import spock.lang.Unroll
 
 class ProductApiSpec extends Specification {
 

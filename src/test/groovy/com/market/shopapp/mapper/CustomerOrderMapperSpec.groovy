@@ -6,7 +6,6 @@ package com.market.shopapp.mapper
 import com.market.shopapp.domain.CustomerOrderEntity
 import com.market.shopapp.dto.CustomerOrderDto
 import com.market.shopapp.helper.ProductHelper
-import com.market.shopapp.mapper.CustomerOrderMapper
 import spock.lang.Specification
 
 import java.time.Instant

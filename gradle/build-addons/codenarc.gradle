@@ -1,0 +1,9 @@
+apply plugin: 'codenarc'
+
+codenarc {
+    toolVersion = "1.0"
+    configFile = rootProject.file("rules/codenarc.groovy")
+    maxPriority1Violations = 0
+    maxPriority2Violations = Integer.MAX_VALUE
+    maxPriority3Violations = Integer.MAX_VALUE
+}
