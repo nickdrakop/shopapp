@@ -4,6 +4,7 @@
 
 package com.market.shopapp.dto;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import java.time.Instant;
 import java.util.List;
@@ -13,6 +14,7 @@ public class CustomerOrderDto {
     private Integer id;
 
     @NotEmpty
+    @Email
     private String email;
 
     private Integer totalOrderValue; //in cents
