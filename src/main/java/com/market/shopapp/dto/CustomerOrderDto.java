@@ -19,7 +19,7 @@ public class CustomerOrderDto {
 
     private Integer totalOrderValue; //in cents
 
-    private Instant orderCreatedAt;
+    private String orderCreatedAt;
 
     @NotEmpty
     private List<Integer> productIds;
@@ -51,11 +51,11 @@ public class CustomerOrderDto {
         this.totalOrderValue = totalOrderValue;
     }
 
-    public Instant getOrderCreatedAt() {
+    public String getOrderCreatedAt() {
         return orderCreatedAt;
     }
 
-    public void setOrderCreatedAt(Instant orderCreatedAt) {
+    public void setOrderCreatedAt(String orderCreatedAt) {
         this.orderCreatedAt = orderCreatedAt;
     }
 
