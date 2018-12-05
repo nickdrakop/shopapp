@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "150c591c-3cf5-4dfa-a1c3-f185658676fb",
+		"_postman_id": "450843ca-3218-4a3a-b98f-932dc8a2da83",
 		"name": "Shopapp",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -144,7 +144,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/orders?start-date=2018-12-04T15:30:21.73Z&end-date=2018-12-04T15:30:23.57Z",
+							"raw": "http://localhost:8080/api/orders?start-date=2018-12-05 12:57:41&end-date=2018-12-30 12:57:41",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -157,11 +157,11 @@
 							"query": [
 								{
 									"key": "start-date",
-									"value": "2018-12-04T15:30:21.73Z"
+									"value": "2018-12-05 12:57:41"
 								},
 								{
 									"key": "end-date",
-									"value": "2018-12-04T15:30:23.57Z"
+									"value": "2018-12-30 12:57:41"
 								}
 							]
 						}
