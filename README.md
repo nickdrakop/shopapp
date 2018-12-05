@@ -80,7 +80,7 @@ Tests run as part of the build process, nevertheless you can run them with the f
           
               ./gradlew clean test
               
- #### Author
+#### Author  
 Nick Drakopoulos (nickdrakop@gmail.com)
 
 
